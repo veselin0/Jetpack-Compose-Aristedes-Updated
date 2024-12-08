@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MyUpgradedApplication"
+rootProject.name = "My UpgradedApplication"
 include(":app")
+ 
