@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myupgradedapplication.layout.My11Ejercicio1FilasColumnasYCajas
 import com.example.myupgradedapplication.layout.MyComplexLayout
 import com.example.myupgradedapplication.layout.MyRow
 import com.example.myupgradedapplication.login.Greeting
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyUpgradedApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyComplexLayout(modifier = Modifier.padding(innerPadding))
+                    My11Ejercicio1FilasColumnasYCajas(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
