@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -23,26 +24,26 @@ fun My11Ejercicio1FilasColumnasYCajas(modifier: Modifier = Modifier) {
             contentAlignment = Alignment.Center) {
             Text(text = "Ejemplo1")
         }
-        Box(modifier = Modifier.weight(1f)
-            .fillMaxWidth()) {
-            Row(modifier = Modifier) {
+
+            Row(modifier = Modifier.weight(1f)
+                .fillMaxWidth()) {
                 Box(modifier = Modifier
                     .weight(1f)
-                    .fillMaxSize()
+                    .fillMaxHeight()
                     .background(Color.Red),
                     contentAlignment = Alignment.Center){
                     Text(text = "Ejemplo2")
                 }
                 Box(modifier = Modifier
                     .weight(1f)
-                    .fillMaxSize()
+                    .fillMaxHeight()
                     .background(Color.Green),
                     contentAlignment = Alignment.Center){
                     Text(text = "Ejemplo3")
                 }
             }
 
-        }
+
         Box(modifier = Modifier.weight(1f)
             .fillMaxWidth()
             .background(Color.Magenta),
