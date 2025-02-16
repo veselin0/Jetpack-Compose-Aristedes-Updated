@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myupgradedapplication.layout.ConstraintExampleGuide
 import com.example.myupgradedapplication.layout.MyBasicConstraintLayout
 import com.example.myupgradedapplication.login.Greeting
 import com.example.myupgradedapplication.ui.theme.MyUpgradedApplicationTheme
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyUpgradedApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyBasicConstraintLayout(modifier = Modifier.padding(innerPadding))
+                    ConstraintExampleGuide(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
