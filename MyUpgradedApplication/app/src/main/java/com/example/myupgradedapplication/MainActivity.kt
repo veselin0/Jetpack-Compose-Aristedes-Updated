@@ -16,6 +16,7 @@ import com.example.myupgradedapplication.layout.ConstraintChain
 import com.example.myupgradedapplication.layout.ConstraintExampleGuide
 import com.example.myupgradedapplication.layout.MyBasicConstraintLayout
 import com.example.myupgradedapplication.login.Greeting
+import com.example.myupgradedapplication.state.MyState
 import com.example.myupgradedapplication.ui.theme.MyUpgradedApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyUpgradedApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ConstraintChain(modifier = Modifier.padding(innerPadding))
+                    MyState(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
