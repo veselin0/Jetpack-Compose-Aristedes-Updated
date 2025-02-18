@@ -13,9 +13,20 @@ import androidx.compose.ui.Modifier
 @Composable
 fun MyState(modifier: Modifier = Modifier) {
     var number by rememberSaveable { mutableIntStateOf(0) }
-    Column {
-        Text(text = "Press me: $number", modifier = modifier.clickable { number += 1 })
-        Text(text = "Press me: $number", modifier = modifier.clickable { number += 1 })
-    }
 
+    Column(modifier = modifier) {
+        StateExample1(number) {number += 1}
+        StateExample2(number = number, onClick = { number += 1 })
+
+    }
+}
+
+@Composable
+fun StateExample1(number: Int, onClick: () -> Unit) {
+    Text(text = "Press me: $number", modifier = Modifier.clickable { onClick() })
+}
+
+@Composable
+fun StateExample2(number: Int, onClick: () -> Unit) {
+    Text(text = "Press me: $number", modifier = Modifier.clickable {onClick() })
 }
