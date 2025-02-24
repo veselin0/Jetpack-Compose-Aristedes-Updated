@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myupgradedapplication.components.MyButtons
 import com.example.myupgradedapplication.components.MyTextField
 import com.example.myupgradedapplication.components.MyTextFieldParent
 import com.example.myupgradedapplication.components.MyTexts
@@ -29,7 +30,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyUpgradedApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyTextFieldParent(modifier = Modifier.padding(innerPadding))
+                    MyButtons(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
