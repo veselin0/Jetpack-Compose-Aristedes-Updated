@@ -12,15 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myupgradedapplication.components.MyButtons
-import com.example.myupgradedapplication.components.MyTextField
-import com.example.myupgradedapplication.components.MyTextFieldParent
-import com.example.myupgradedapplication.components.MyTexts
-import com.example.myupgradedapplication.layout.ConstraintBarrier
-import com.example.myupgradedapplication.layout.ConstraintChain
-import com.example.myupgradedapplication.layout.ConstraintExampleGuide
-import com.example.myupgradedapplication.layout.MyBasicConstraintLayout
 import com.example.myupgradedapplication.login.Greeting
-import com.example.myupgradedapplication.state.MyState
 import com.example.myupgradedapplication.ui.theme.MyUpgradedApplicationTheme
 
 class MainActivity : ComponentActivity() {
