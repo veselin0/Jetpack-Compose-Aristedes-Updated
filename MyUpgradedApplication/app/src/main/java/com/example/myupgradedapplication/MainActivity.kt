@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.myupgradedapplication.components.MyButtons
+import com.example.myupgradedapplication.components.MyImage
 import com.example.myupgradedapplication.login.Greeting
 import com.example.myupgradedapplication.ui.theme.MyUpgradedApplicationTheme
 
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyUpgradedApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyButtons(modifier = Modifier.padding(innerPadding))
+                    MyImage(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
