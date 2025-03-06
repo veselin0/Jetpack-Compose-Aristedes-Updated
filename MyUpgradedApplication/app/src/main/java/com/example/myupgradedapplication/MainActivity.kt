@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myupgradedapplication.components.MyImagesAndIcons
+import com.example.myupgradedapplication.components.MyProgressBar
 import com.example.myupgradedapplication.login.Greeting
 import com.example.myupgradedapplication.ui.theme.MyUpgradedApplicationTheme
 
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyUpgradedApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyImagesAndIcons(modifier = Modifier.padding(innerPadding))
+                    MyProgressBar(modifier = Modifier.padding(innerPadding))
                 }
             }
         }

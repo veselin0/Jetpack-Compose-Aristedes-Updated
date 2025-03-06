@@ -22,7 +22,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.myupgradedapplication.R
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyImagesAndIcons(modifier: Modifier = Modifier) {
     Column(
@@ -41,7 +40,10 @@ fun MyImagesAndIcons(modifier: Modifier = Modifier) {
         Image(
             painter = painterResource(id = R.drawable.img_0017),
             contentDescription = "Example",
-            modifier = Modifier.size(200.dp).clip(CircleShape).border(5.dp, Color.Black, CircleShape)
+            modifier = Modifier
+                .size(200.dp)
+                .clip(CircleShape)
+                .border(5.dp, Color.Black, CircleShape)
         )
 
         Spacer(modifier = modifier.height(5.dp))
@@ -52,7 +54,7 @@ fun MyImagesAndIcons(modifier: Modifier = Modifier) {
             modifier = Modifier.size(50.dp),
             tint = Color.Red
         )
-        
+
     }
 
 }
