@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.myupgradedapplication.components.MyAdvancedProgressBar
 import com.example.myupgradedapplication.components.MyImagesAndIcons
 import com.example.myupgradedapplication.components.MyProgressBar
+import com.example.myupgradedapplication.components.MySelectionControlComponents
 import com.example.myupgradedapplication.login.Greeting
 import com.example.myupgradedapplication.ui.theme.MyUpgradedApplicationTheme
 
@@ -24,7 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyUpgradedApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyAdvancedProgressBar(modifier = Modifier.padding(innerPadding))
+                    MySelectionControlComponents(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
