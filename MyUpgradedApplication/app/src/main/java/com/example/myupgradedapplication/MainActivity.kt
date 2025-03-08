@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myupgradedapplication.components.MyAdvancedProgressBar
+import com.example.myupgradedapplication.components.MyCheckboxWithText
 import com.example.myupgradedapplication.components.MyImagesAndIcons
 import com.example.myupgradedapplication.components.MyProgressBar
 import com.example.myupgradedapplication.components.MySelectionControlComponents
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyUpgradedApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MySelectionControlComponents(modifier = Modifier.padding(innerPadding))
+                    MyCheckboxWithText(modifier = Modifier.padding(innerPadding))
                 }
             }
         }

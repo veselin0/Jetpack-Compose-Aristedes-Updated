@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Checkbox
@@ -22,16 +23,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.myupgradedapplication.ui.theme.CheckInfo
+
 
 @Composable
 fun MySelectionControlComponents(modifier: Modifier = Modifier) {
     var switchState by rememberSaveable { mutableStateOf(false) }
     var checkboxState by rememberSaveable { mutableStateOf(false) }
-    var checkboxwithtextState by rememberSaveable { mutableStateOf(false) }
+
     Column(
-        modifier = modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceEvenly
+        modifier.fillMaxSize(), Arrangement.SpaceEvenly, Alignment.CenterHorizontally
     ) {
         Box {
             Text(text = "My Switch")
@@ -63,17 +64,27 @@ fun MySelectionControlComponents(modifier: Modifier = Modifier) {
                 )
             )
         }
-        Box {
-            Text(text = "My Checkbox With Text")
-            Row(modifier = modifier.padding(8.dp)) {
-                Checkbox(
-                    checked = checkboxwithtextState,
-                    onCheckedChange = { checkboxwithtextState = !checkboxwithtextState },
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(text = "Check the Box")
-            }
-        }
 
+        //MyCheckboxWithText()
+
+
+    }
+}
+
+@Composable
+fun MyCheckboxWithText(modifier: Modifier = Modifier) {
+    var checkboxWithTextState by rememberSaveable { mutableStateOf(false) }
+    Box {
+        Text(text = "My Checkbox With Text")
+        //Spacer(modifier = modifier.height(8.dp))
+        Row(modifier = modifier.padding(8.dp)) {
+            Checkbox(
+                modifier = modifier.padding(vertical = 2.dp),
+                checked = checkboxWithTextState,
+                onCheckedChange = { checkboxWithTextState = !checkboxWithTextState },
+            )
+            //Spacer(modifier = Modifier.width(8.dp))
+            Text(text = "Check the Box")
+        }
     }
 }
