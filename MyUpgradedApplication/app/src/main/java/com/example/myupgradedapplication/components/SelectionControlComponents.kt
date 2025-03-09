@@ -26,13 +26,25 @@ import androidx.compose.ui.unit.dp
 import com.example.myupgradedapplication.ui.theme.CheckInfo
 
 
-@Composable
+/*@Composable
 fun MySelectionControlComponents(modifier: Modifier = Modifier) {
-    var switchState by rememberSaveable { mutableStateOf(false) }
-    var checkboxState by rememberSaveable { mutableStateOf(false) }
+    //var switchState by rememberSaveable { mutableStateOf(false) }
+    //var checkboxState by rememberSaveable { mutableStateOf(false) }
 
     Column(
-        modifier.fillMaxSize(), Arrangement.SpaceEvenly, Alignment.CenterHorizontally
+        modifier.fillMaxSize(), Arrangement.Center, Alignment.CenterHorizontally
+    ) {
+        MySwitch()
+        MyCheckbox()
+        MyCheckboxWithText()
+    }
+}*/
+
+@Composable
+fun MySwitch(modifier: Modifier = Modifier) {
+    var switchState by rememberSaveable { mutableStateOf(false) }
+    Column(
+        // modifier.fillMaxSize(), Arrangement.SpaceEvenly, Alignment.CenterHorizontally
     ) {
         Box {
             Text(text = "My Switch")
@@ -50,6 +62,15 @@ fun MySelectionControlComponents(modifier: Modifier = Modifier) {
                 )
             )
         }
+    }
+}
+
+@Composable
+fun MyCheckbox(modifier: Modifier = Modifier) {
+    var checkboxState by rememberSaveable { mutableStateOf(false) }
+    Column(
+        modifier.fillMaxSize(), Arrangement.SpaceEvenly, Alignment.CenterHorizontally
+    ) {
         Box {
             Text(text = "My Checkbox")
             Checkbox(
@@ -64,27 +85,39 @@ fun MySelectionControlComponents(modifier: Modifier = Modifier) {
                 )
             )
         }
-
-        //MyCheckboxWithText()
-
-
     }
 }
+
 
 @Composable
 fun MyCheckboxWithText(modifier: Modifier = Modifier) {
     var checkboxWithTextState by rememberSaveable { mutableStateOf(false) }
+
     Box {
-        Text(text = "My Checkbox With Text")
-        //Spacer(modifier = modifier.height(8.dp))
+
         Row(modifier = modifier.padding(8.dp)) {
             Checkbox(
-                modifier = modifier.padding(vertical = 2.dp),
                 checked = checkboxWithTextState,
                 onCheckedChange = { checkboxWithTextState = !checkboxWithTextState },
             )
-            //Spacer(modifier = Modifier.width(8.dp))
+            Spacer(modifier = Modifier.width(8.dp))
             Text(text = "Check the Box")
         }
     }
 }
+
+
+@Composable
+fun MyMultipleCheckboxWithText(modifier: Modifier = Modifier, checkInfo: CheckInfo) {
+
+    Text(text = "My Checkbox With Text")
+    Row(modifier = modifier.padding(8.dp)) {
+        Checkbox(
+            checked = checkInfo.selected,
+            onCheckedChange = { checkInfo.onCheckedChanged(!checkInfo.selected) },
+        )
+        Text(text = checkInfo.title)
+    }
+}
+
+
