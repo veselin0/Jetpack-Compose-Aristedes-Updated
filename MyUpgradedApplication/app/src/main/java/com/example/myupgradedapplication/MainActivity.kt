@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -12,10 +14,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.myupgradedapplication.components.MyCheckboxWithText
 import com.example.myupgradedapplication.components.MyMultipleCheckboxWithText
 import com.example.myupgradedapplication.login.Greeting
 import com.example.myupgradedapplication.ui.theme.CheckInfo
@@ -26,19 +28,36 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val myOptions = getOptions(
+                listOf(
+                    "Press here to check 1",
+                    "Press here to check 2",
+                    "Press here to check 3"
+                )
+            )
             MyUpgradedApplicationTheme {
-                /*var state by rememberSaveable { mutableStateOf(false) }
-                val checkInfo = CheckInfo(
-                    title = "Este es el bueno",
-                    selected = state,
-                    onCheckedChanged = {state = it}
-                )*/
+//                var state by rememberSavable { mutableStateOf(false) }
+//                val checkInfo = CheckInfo(
+//                    title = "Este es el bueno",
+//                    selected = state,
+//                    onCheckedChanged = {state = it}
+//                )
 
-                val myOptions = getOptions(listOf("Check 1", "Check 2", "Check 3"))
+
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    myOptions.forEach {
-                        MyMultipleCheckboxWithText(modifier = Modifier.padding(innerPadding), it)
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        Arrangement.Center,
+                        Alignment.CenterHorizontally
+                    ) {
+                        myOptions.forEach {
+                            MyMultipleCheckboxWithText(
+                                modifier = Modifier.padding(innerPadding),
+                                it
+                            )
+                        }
                     }
+
 
                 }
             }
