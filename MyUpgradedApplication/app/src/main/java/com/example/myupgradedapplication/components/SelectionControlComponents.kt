@@ -6,11 +6,15 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonColors
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
@@ -127,12 +131,28 @@ fun MyTriStateCheckbox(modifier: Modifier = Modifier) {
     var status by rememberSaveable { mutableStateOf(ToggleableState.Off) }
     Text(text = "My Tri State Checkbox")
     TriStateCheckbox(state = status, onClick = {
-        status = when(status){
+        status = when (status) {
             ToggleableState.On -> ToggleableState.Off
             ToggleableState.Off -> ToggleableState.Indeterminate
             ToggleableState.Indeterminate -> ToggleableState.On
         }
     })
+}
+
+@Composable
+fun MyRadioButton(modifier: Modifier = Modifier) {
+    Text(text = "My Radio Button")
+    Row(modifier = Modifier.fillMaxWidth()) {
+        RadioButton(
+            onClick = {}, selected = true, enabled = true, colors = RadioButtonDefaults.colors(
+                selectedColor = Color.Red,
+                unselectedColor = Color.Green,
+                disabledSelectedColor = Color.LightGray,
+                disabledUnselectedColor = Color.LightGray
+            )
+        )
+        Text(text = "RB 1")
+    }
 }
 
 

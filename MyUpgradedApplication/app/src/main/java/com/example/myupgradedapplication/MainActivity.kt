@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myupgradedapplication.components.MyMultipleCheckboxWithText
+import com.example.myupgradedapplication.components.MyRadioButton
 import com.example.myupgradedapplication.components.MyTriStateCheckbox
 import com.example.myupgradedapplication.login.Greeting
 import com.example.myupgradedapplication.ui.theme.CheckInfo
@@ -51,6 +52,7 @@ class MainActivity : ComponentActivity() {
                         Arrangement.Center,
                         Alignment.CenterHorizontally
                     ) {
+                        MyRadioButton()
                         MyTriStateCheckbox()
                         myOptions.forEach {
                             MyMultipleCheckboxWithText(
