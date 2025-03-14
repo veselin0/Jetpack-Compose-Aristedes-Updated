@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myupgradedapplication.components.MyMultipleCheckboxWithText
 import com.example.myupgradedapplication.components.MyRadioButton
+import com.example.myupgradedapplication.components.MyRadioButtonsList
 import com.example.myupgradedapplication.components.MyTriStateCheckbox
 import com.example.myupgradedapplication.login.Greeting
 import com.example.myupgradedapplication.ui.theme.CheckInfo
@@ -37,6 +38,7 @@ class MainActivity : ComponentActivity() {
                     "Press here to check 3"
                 )
             )
+            var selected by rememberSaveable { mutableStateOf("RB 1") }
             MyUpgradedApplicationTheme {
 //                var state by rememberSavable { mutableStateOf(false) }
 //                val checkInfo = CheckInfo(
@@ -52,6 +54,7 @@ class MainActivity : ComponentActivity() {
                         Arrangement.Center,
                         Alignment.CenterHorizontally
                     ) {
+                        MyRadioButtonsList(selected) { selected = it }
                         MyRadioButton()
                         MyTriStateCheckbox()
                         myOptions.forEach {

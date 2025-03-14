@@ -7,13 +7,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.RadioButton
-import androidx.compose.material3.RadioButtonColors
 import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
@@ -154,5 +152,93 @@ fun MyRadioButton(modifier: Modifier = Modifier) {
         Text(text = "RB 1")
     }
 }
+
+@Composable
+fun MyRadioButtonsList(
+    name: String,
+    onItemSelected: (String) -> Unit
+) {
+//    var selected by rememberSaveable { mutableStateOf("RB 1") }
+    Text(text = "My Radio Buttons List")
+    Row {
+        RadioButton(onClick = { onItemSelected("RB 1") }, selected = name == "RB 1")
+        Text(text = "RB 1")
+    }
+    Row {
+        RadioButton(onClick = { onItemSelected("RB 2") }, selected = name == "RB 2")
+        Text(text = "RB 2")
+    }
+    Row {
+        RadioButton(onClick = { onItemSelected("RB 3") }, selected = name == "RB 3")
+        Text(text = "RB 3")
+    }
+    Row {
+        RadioButton(onClick = { onItemSelected("RB 4") }, selected = name == "RB 4")
+        Text(text = "RB 4")
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
 
 
